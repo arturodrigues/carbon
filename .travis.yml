@@ -40,10 +40,10 @@ cypress-travis-regression: &cypress-travis-regression
   - kill $(jobs -p) || true
 
 stages:
-  - test
-  - regression
+  - name: test
+  - name: regression
     if: type = cron # we only need to run regression on nightly cron builds
-  - deploy
+  - name: deploy
 
 jobs:
   fast_finish: true
